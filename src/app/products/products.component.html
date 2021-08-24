@@ -1,0 +1,31 @@
+<app-header></app-header>
+    <!-- products -->
+    <section class="products">
+      <div class="section-title">
+        <h2>our products</h2>
+      </div>
+      <div class="products-center">
+        <!-- single product -->
+          <div *ngFor= "let product of productss">
+            <article class="product">
+              <div class="img-container">
+                <img
+                  src={{product.image}}
+                  alt="product"
+                  class="product-img"
+                />
+                <button (click)="addTocart(product,$event)" class="bag-btn" data-id={{product.id}}>
+                  <i class="fas fa-shopping-cart"></i>
+                  add to bag
+                </button>
+              </div>
+              <h3>{{product.title}}</h3>
+              <h3>{{product.description}}</h3>
+              <h4>{{product.price}}</h4>
+            </article>
+          </div>
+          
+        <!-- end of single product -->
+        </div>
+    </section>
+    <!-- end of products -->

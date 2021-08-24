@@ -1,0 +1,51 @@
+
+:root {
+    --primaryColor: #f09d51;
+    --mainWhite: rgb(248, 192, 192);
+    --mainBlack: #222;
+    --mainGrey: #ececec;
+    --mainSpacing: 0.1rem;
+    --mainTransition: all 0.3s linear;
+}
+.navbar {
+    background: var(--mainWhite);
+    position: sticky;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgb(236, 229, 222);
+    z-index: 1;
+}
+.navbar-center {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+}
+.navbar-center h1{
+    font-weight: 700;
+    text-align: center;
+    color: burlywood;
+    font-size: 3rem;
+}
+.nav-icon {
+    font-size: 1.5rem;
+}
+.cart-btn {
+    position: relative;
+    cursor: pointer;
+}
+.cart-items {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primaryColor);
+    padding: 0 5px;
+    border-radius: 30%;
+    color: var(--mainWhite);
+}
