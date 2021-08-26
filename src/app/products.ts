@@ -1,17 +1,17 @@
 
 
-export interface product {
+// export interface product {
     
-    id:any,
-    title:any,
-    price:any,
-    description:any,
-    image:string
+//     id:any,
+//     title:any,
+//     price:any,
+//     description:any,
+//     image:string
 
-    // name:string,
-    // age:number,
-    // work:string
-}
+//     // name:string,
+//     // age:number,
+//     // work:string
+// }
 
 export const products =[
 
@@ -20,7 +20,7 @@ export const products =[
         "title":"queen panel bed",
         "price":1000,
         "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, quisquam.",
-        "image":"https://picsum.photos/id/180/2400/1600",
+        "image":"../assets/Images/product-1.jpg",
         "qantity": 1,
         "totalvalue" : 1000
     },
@@ -29,7 +29,7 @@ export const products =[
         "title":"king panel bed",
         "price":1780,
         "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, quisquam.",
-        "image":"https://picsum.photos/id/111/4400/2656",
+        "image":"../assets/Images/product-2.jpg",
         "qantity": 1,
         "totalvalue" : 1780
     },
@@ -38,7 +38,7 @@ export const products =[
         "title":"single panel bed",
         "price":678,
         "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, quisquam.",
-        "image":"../images/product-3.jpeg",
+        "image":"../assets/Images/product-3.jpg",
         "qantity": 1,
         "totalvalue" : 678
     },
@@ -47,7 +47,7 @@ export const products =[
         "title":"twin panel bed",
         "price":2399,
         "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, quisquam.",
-        "image":"../images/product-4.jpeg",
+        "image":"../assets/Images/product-4.jpg",
         "qantity": 1,
         "totalvalue" : 2399
     },
@@ -56,7 +56,7 @@ export const products =[
         "title":"fridge",
         "price":3100,
         "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, quisquam.",
-        "image":"../images/product-5.jpeg",
+        "image":"../assets/Images/product-5.jpg",
         "qantity": 1,
         "totalvalue" : 3100
     },
@@ -65,7 +65,7 @@ export const products =[
         "title":"dresser",
         "price":1550,
         "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, quisquam.",
-        "image":"../images/product-6.jpeg",
+        "image":"../assets/Images/product-6.jpg",
         "qantity": 1,
         "totalvalue" : 1550
     },
@@ -74,7 +74,7 @@ export const products =[
         "title":"couch",
         "price":1950,
         "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, quisquam.",
-        "image":"../images/product-7.jpeg",
+        "image":"../assets/Images/product-7.jpg",
         "qantity": 1,
         "totalvalue" : 1950
     },
@@ -83,7 +83,7 @@ export const products =[
         "title":"table",
         "price":2100,
         "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, quisquam.",
-        "image":"../images/product-8.jpeg",
+        "image":"../assets/Images/product-8.jpg",
         "qantity": 1,
         "totalvalue" : 2100
     }
