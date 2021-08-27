@@ -9,6 +9,7 @@ export class Cartservice {
   public cartItems:any= [];
   public productList = new BehaviorSubject<any>([]);
   public grandAmount = 0;
+  Localstore:any[]=[];
   constructor() { }
 
   getProducts(){
@@ -28,25 +29,31 @@ export class Cartservice {
   addCartitem(product:any){
     this.cartItems.push(product);
     // localStorage.setItem('Cart',JSON.stringify(this.cartItems));
-    console.log(this.cartItems)
+    console.log("addToCart:"+ " " + this.cartItems)
     this.productList.next(this.cartItems);
-    console.log('vvvvv' + this.productList);
+    console.log('vvvvv' + " " + this.productList);
     this.gettotalPrice();
     console.log(this.gettotalPrice());
+    this.Localstore = [...this.cartItems];
+    console.log("additem in Localstore" + " " + this.Localstore);
+    localStorage.setItem("Cart", JSON.stringify(this.Localstore));
   }
 
   
 
   gettotalPrice(){
     let grandTotal:number = 0;
-    console.log("in cart item:" + this.cartItems);
+    console.log("in cart item:" + " " + this.cartItems);
     this.cartItems.map((item:any) => {
-      console.log("Find item:" + item);
-      console.log('Find value:' + item.totalvalue);
+      console.log("Find item:" + " " + item);
+      console.log('Find value:' + " " + item.totalvalue);
       let total= parseInt(item.totalvalue);
-      console.log("Find total:" + total);
+      console.log("Find total:" + " " + total);
       grandTotal += total;
-      console.log("find total valu:" +grandTotal);
+      console.log("find total valu:" + " " +grandTotal);
+      this.Localstore = [...this.cartItems];
+      console.log("get updated price&Quntiy in Localstore:" + " " + this.Localstore);
+      localStorage.setItem("Cart",JSON.stringify(this.Localstore));
     })
     return grandTotal;
   }
@@ -60,8 +67,11 @@ export class Cartservice {
         item.totalvalue = item.price;
        
       }
-      console.log("cartItems after remove" +this.cartItems)
+      console.log("cartItems after remove:" + " " +this.cartItems)
       this.productList.next(this.cartItems);
+      this.Localstore = [...this.cartItems];
+      console.log("remove item in Localstore" + " " + this.Localstore);
+      localStorage.setItem("Cart",JSON.stringify(this.Localstore));
       
     })
     
@@ -74,7 +84,10 @@ export class Cartservice {
       pro.totalvalue = pro.price;
     })
     this.productList.next(this.cartItems);
-    return data
+    this.Localstore = [...this.cartItems];
+    console.log("emptycart in Localstore" + " " + this.Localstore);
+    localStorage.setItem("Cart",JSON.stringify(this.Localstore));
+    return data;
 
   }
 
@@ -83,7 +96,9 @@ export class Cartservice {
 
 
   // addtoLocalstorage(product:any){
-  //   localStorage.setItem('Cart',JSON.stringify(product));
+  //   console.log("addLocalstore:" + " " +product);
+  //   this.Localstore = [...product];
+  //   localStorage.setItem("cart", JSON.stringify(this.Localstore));
   // }
   
   // itemPluse(item:any){

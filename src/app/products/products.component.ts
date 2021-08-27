@@ -46,13 +46,28 @@ export class ProductsComponent implements OnInit {
 // Add products in to the cart
   addTocart(product:any, event:any, ){
     console.log(event);
-    console.log('id:' + product.id)
+    console.log('id:' + " " + product.id)
 
-    event.target.disabled = true;
-    event.target.innerText = 'In the bag';
 
-    this.cart.addCartitem(product);
+    // event.target.disabled = true;
+    // event.target.innerText = 'In the bag';
+
+    // this.cart.addCartitem(product);
     
+    const Id = product.id;
+    let InCart:boolean = this.cart.cartItems.find((item:any)=>{
+      item.id === Id;
+    })
+    console.log(InCart);
+    if(InCart){
+      event.target.disabled = true;
+      event.target.innerText = 'In the bag';
+    }else{
+      event.target.disabled = true;
+      event.target.innerText = 'In the bag';
+      this.cart.addCartitem(product);
+      // this.cart.addtoLocalstorage(product);
+    }
   
   // its just an experiment.
     // let Id = product.id;
@@ -72,7 +87,7 @@ export class ProductsComponent implements OnInit {
     // let Id = product.id;
     // let Item = (localStorage.getItem("Products"));
     //   return products.find(product => product.id === Id);
-    // this.cart.addtoLocalstorage(product);
+    
   }
 
 
