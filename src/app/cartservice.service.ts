@@ -6,7 +6,7 @@ import { products } from './products';
   providedIn: 'root'
 })
 export class Cartservice {
-  public cartItems:any= [];
+  public cartItems:any= JSON.parse(localStorage.getItem('Cart') || '[]') || [];
   public productList = new BehaviorSubject<any>([]);
   public grandAmount = 0;
   Localstore:any[]=[];

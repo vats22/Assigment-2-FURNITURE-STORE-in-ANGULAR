@@ -20,23 +20,6 @@ export class ProductsComponent implements OnInit {
   constructor(private productService: Productservice, private cart:Cartservice) { }
 
   ngOnInit(): void {
-
-  // fatch the products from the server .
-    // this.productService.getProducts().subscribe((res)=>
-    // {
-    //   console.log( ' ++++++++++++ ' +res);
-      
-    //   this.productss = res;
-    //   console.log( ' ------------- ' + this.productss);
-    //   this.productss.forEach((product:any) => {
-    //     Object.assign(product,{amount:1, total:product.price});
-    //   });
-    // })
-  
-  // its just an experiment
-    // this.cart.on<any>().subscribe((item:any)=>{
-    //   this.cartItem = item;
-    // })
     
   // save the products in to Local storage.
     localStorage.setItem("Products", JSON.stringify(products));
@@ -49,25 +32,27 @@ export class ProductsComponent implements OnInit {
     console.log('id:' + " " + product.id)
 
 
-    // event.target.disabled = true;
-    // event.target.innerText = 'In the bag';
+    event.target.disabled = true;
+    event.target.innerText = 'In the bag';
 
-    // this.cart.addCartitem(product);
+    this.cart.addCartitem(product);
+
+   
     
-    const Id = product.id;
-    let InCart:boolean = this.cart.cartItems.find((item:any)=>{
-      item.id === Id;
-    })
-    console.log(InCart);
-    if(InCart){
-      event.target.disabled = true;
-      event.target.innerText = 'In the bag';
-    }else{
-      event.target.disabled = true;
-      event.target.innerText = 'In the bag';
-      this.cart.addCartitem(product);
-      // this.cart.addtoLocalstorage(product);
-    }
+    // const Id = product.id;
+    // let InCart:boolean = this.cart.cartItems.find((item:any)=>{
+    //   item.id === Id;
+    // })
+    // console.log(InCart);
+    // if(InCart){
+    //   event.target.disabled = true;
+    //   event.target.innerText = 'In the bag';
+    // }else{
+    //   event.target.disabled = true;
+    //   event.target.innerText = 'In the bag';
+    //   this.cart.addCartitem(product);
+    //   // this.cart.addtoLocalstorage(product);
+    // }
   
   // its just an experiment.
     // let Id = product.id;

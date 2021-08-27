@@ -15,12 +15,25 @@ export class CartComponent implements OnInit {
   constructor(private cart:Cartservice) { }
 
   ngOnInit(): void {
+
+    // if(localStorage.getItem("Cart") != null){
+    //   this.cart.cartItems = localStorage.getItem(JSON.parse("Cart") || []);
+    //   let product = this.cart.cartItems.map(((item:any)=>{
+    //     return item
+    //   }));
+    //   this.products = this.cart.cartItems;
+    //   console.log("from ngOnInit:" + product);
+    //   this.cart.addCartitem(product);
+      
+    // }
+
     this.cart.getProducts().subscribe((res:any)=>{
       this.products = res;
       console.log('mmmmmmm' + this.products);
       this.grandTotal = this.cart.gettotalPrice();
       console.log('hhhhhh' + this.grandTotal);
     })
+
    
   }
 
@@ -65,12 +78,7 @@ export class CartComponent implements OnInit {
 
   
 
-  // hideCart(){
-  //   let cartOverlay:any = document.querySelector(".cart-overlay");
-  //   cartOverlay.classList.remove("transparentBcg");
-  //   let cartDom:any = document.querySelector(".cart");
-  //   cartDom.classList.remove('showCart')
-  // }
+
   
 
 }
